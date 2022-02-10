@@ -24,4 +24,15 @@ public class CarlyRaeJepsen {
 	void maybe() {
 		System.out.println("Maybe");
 	}
+
+	@Order(Integer.MAX_VALUE)
+	@CallMe
+	void theLastOne() {
+		System.out.println("А меня надо вызвать последним");
+	}
+
+	@CallMe
+	void withoutOrder() {
+		System.out.println("А я без @Order'а меня можно вызывать в любом порядке");
+	}
 }

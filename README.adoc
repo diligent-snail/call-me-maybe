@@ -5,7 +5,7 @@
 . Найти класс по имени
 . Создать его экземпляр
 . Найти все методы с аннотацией link:src/main/java/edu/reflection/CallMe.java[`CallMe`], включая `private` и `protected` методы
-. Вызвать методы у которых `maybe = true` в порядке, указанном в аннотации link:src/main/java/edu/reflection/Order.java[`Order.java`]
+. Вызвать методы у которых `maybe = true` в порядке, отсортированном по аннотации link:src/main/java/edu/reflection/Order.java[`Order.java`]
 . Логику пунктов 1, 2, 3, 4 вынести в отдельный метод отдельного класса -- не тот, что читает ввод от пользователя
 .. Написать для него тест
 . Обработать ошибки
