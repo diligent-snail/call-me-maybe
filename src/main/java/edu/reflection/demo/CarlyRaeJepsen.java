@@ -1,4 +1,7 @@
-package edu.reflection;
+package edu.reflection.demo;
+
+import edu.reflection.annotation.CallMe;
+import edu.reflection.annotation.Order;
 
 public class CarlyRaeJepsen {
 	@Order(1)

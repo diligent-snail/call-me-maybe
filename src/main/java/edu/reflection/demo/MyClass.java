@@ -1,6 +1,12 @@
-package edu.reflection;
+package edu.reflection.demo;
 
-public class MyClass2 {
+import edu.reflection.annotation.CallMe;
+import edu.reflection.annotation.Order;
+
+public class MyClass {
+	MyClass(boolean isGo) {
+	}
+
 	@Order(1)
 	@CallMe
 	private void sayHello() {
