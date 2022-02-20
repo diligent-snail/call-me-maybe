@@ -2,6 +2,7 @@ package edu.reflection.utils;
 
 import edu.reflection.annotation.Order;
 
+import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Method;
 import java.util.Comparator;
 import java.util.Objects;
@@ -17,15 +18,15 @@ public class OrderComparator implements Comparator<Method> {
 		Objects.requireNonNull(method1);
 		Objects.requireNonNull(method2);
 
-		int order1 = Integer.MIN_VALUE;
-		int order2 = Integer.MIN_VALUE;
-		if (method1.isAnnotationPresent(Order.class)) {
-			order1 = method1.getAnnotation(Order.class).value();
-		}
-		if (method2.isAnnotationPresent(Order.class)) {
-			order2 = method2.getAnnotation(Order.class).value();
-		}
+		return Integer.compare(getOrder(method1), getOrder(method2));
+	}
 
-		return Integer.compare(order1, order2);
+	private static int getOrder(AnnotatedElement annotatedElement) {
+		Objects.requireNonNull(annotatedElement);
+		if (!annotatedElement.isAnnotationPresent(Order.class)) {
+			return Integer.MAX_VALUE;
+		}
+		Order annotation = annotatedElement.getAnnotation(Order.class);
+		return annotation.value();
 	}
 }
