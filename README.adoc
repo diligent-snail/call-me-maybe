@@ -6,9 +6,14 @@
 . Создать его экземпляр
 . Найти все методы с аннотацией link:src/main/java/edu/reflection/CallMe.java[`CallMe`], включая `private` и `protected` методы
 . Вызвать методы у которых `maybe = true` в порядке, отсортированном по аннотации link:src/main/java/edu/reflection/Order.java[`Order.java`]
-. Логику пунктов 1, 2, 3, 4 вынести в отдельный метод отдельного класса -- не тот, что читает ввод от пользователя
-.. Написать для него тест
-. Обработать ошибки
+. Логику пунктов 1, 2, 3, 4 разделить на методы, так, чтобы их можно было протестировать:
+.. Написать для них тесты
+.. Примерная сигнатура метода для тестов: `void invokeCallMeMethods(Class<?> clazz)`
+. Обработать исключения в `main`
+. Добавить класс-романтик, который прочитает Ваши любимые стихи в `System.out`:
+.. Каждый метод выводит одну строку стихотворения
+.. Вызовы методов упорядочить с помощью аннотации `@Order`
+.. Аналогично link:src/main/java/edu/reflection/CarlyRaeJepsen.java[`CarlyRaeJepsen`]
 
 == Пример взаимодействия
 
@@ -75,7 +80,3 @@ edu.reflection.Instantiate@3fee733d
 == Ссылки
 
 * https://stackoverflow.com/q/16635025/6486622[Dosen't Reflection API break the very purpose of Data encapsulation?]
-
-== Срок
-
-До 23:59:59 по Москве 15 февраля
